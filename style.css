@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 body {
@@ -22,9 +29,112 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 1024px;
+  margin: 0 auto;
 }
 header img {
   width: 280px;
+}
+header .menu {
+  display: flex;
+  flex-direction: row;
+}
+header .menu li {
+  padding: 0 0.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  float: left;
+}
+.section.header {
+  height: 40rem;
+}
+.section.header .logo {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+}
+.section.header .logo img {
+  width: 280px;
+}
+.section.header .about {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 8rem 5rem 0rem 1rem;
+}
+.section.generative .title, .section.generative .seed, .section.screen .title, .section.screen .seed, .section.datavis .title, .section.datavis .seed {
+  color: white;
+}
+.section.reverse {
+  flex-direction: row-reverse;
+}
+.section.reverse .image .text-group {
+  align-items: flex-start;
+}
+.section .image, .section .text {
+  position: relative;
+  float: left;
+}
+.section .image {
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section .image .text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+  color: black;
+  padding: 0 4rem;
+}
+.section .image .text-group .title {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.section .image img {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.section .text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem;
+  width: 30%;
+}
+.section .text .title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: none;
+}
+.section .text .info {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+}
+.section .text .seed {
+  display: none;
 }
 
 .slider {
@@ -168,38 +278,29 @@ header img {
 }
 .disclaimer {
   position: relative;
-  width: 600px;
-  margin: 0 auto;
-  padding: 6rem 6rem 0 6rem;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6rem;
   font-size: 0.75rem;
   font-weight: 400;
 }
-@media (max-width: 600px) {
-  .disclaimer {
-    width: 100%;
-    padding: 3rem 1rem 0 1rem;
-  }
+.disclaimer p {
+  width: 70%;
 }
 
 footer {
   position: relative;
-  width: 600px;
-  margin: 0 auto;
-  padding: 6rem;
-}
-@media (max-width: 600px) {
-  footer {
-    width: 100%;
-    padding: 3rem 1rem 0 1rem;
-  }
-}
-footer ul, footer li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  width: 100%;
+  float: left;
 }
 footer ul {
-  width: 100%;
+  width: 600px;
+  margin: 0 auto;
+  padding: 6rem 0;
+}
+footer ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -208,4 +309,56 @@ footer ul {
 .copyright {
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+@media (max-width: 1000px) {
+  header {
+    width: 100%;
+  }
+  header .menu {
+    display: none;
+  }
+  .section {
+    flex-direction: column !important;
+    padding: 0 0 0 0;
+  }
+  .section.header {
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 4rem;
+  }
+  .section.header .logo, .section.header .about {
+    width: 100%;
+  }
+  .section.header .logo {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .section.header .about {
+    width: 100%;
+    padding: 1rem;
+  }
+  .section .image, .section .text {
+    width: 100%;
+  }
+  .section .text {
+    padding: 1rem 1rem 10rem 1rem;
+  }
+  .section .image {
+    align-items: flex-end;
+  }
+  .section .image .text-group {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .disclaimer {
+    width: 100%;
+    padding: 3rem 1rem 0 1rem;
+  }
+  .disclaimer p {
+    width: 100%;
+  }
+  footer {
+    padding: 3rem 1rem 0 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */
